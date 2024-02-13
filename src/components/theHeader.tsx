@@ -1,11 +1,24 @@
-import imgLogo from "images/logo.png"; // start-path is 'images/' because we have an alias 'images' in webpack.common.js
+import { NavLink } from "react-router-dom";
 import styles from "./theHeader.m.scss";
+import ROUTES from "../constants/routePaths";
 
 export default function TheHeader() {
+  const getNavLinkClass = ({ isActive }: { isActive: boolean }) => (isActive ? styles.navLinkActive : styles.navLink);
+
   return (
-    <h1 className={styles.header}>
-      <img src={imgLogo} alt="logo" />
-      Webpack Must Have
-    </h1>
+    <header className={styles.header}>
+      <h1 className={styles.title}>Games Store</h1>
+      <nav>
+        <NavLink to={ROUTES.HOME} className={getNavLinkClass}>
+          Home
+        </NavLink>
+        <NavLink to={ROUTES.PRODUCTS} className={getNavLinkClass}>
+          Products
+        </NavLink>
+        <NavLink to={ROUTES.ABOUT} className={getNavLinkClass}>
+          About
+        </NavLink>
+      </nav>
+    </header>
   );
 }
