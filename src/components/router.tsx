@@ -4,11 +4,13 @@ import Layout from "./layout";
 import HomePage from "./home";
 import ProductsPage from "./products";
 import AboutPage from "./about";
+import ErrorPage from "./errorPage";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: ROUTES.HOME,
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
       { path: ROUTES.PRODUCTS, element: <ProductsPage /> },
