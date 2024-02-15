@@ -1,0 +1,45 @@
+.footer {
+  background-color: $basicColor;
+  color: $whiteColor;
+  padding: 20px;
+  text-align: center;
+}
+
+.slogan {
+  font-size: 1.5em;
+  margin: 0 0 20px 0;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    margin: 0 10px;
+    transition: transform 0.2s ease;
+
+    img {
+      height: 50px;
+      transition: opacity 0.2s ease;
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+      outline: none;
+
+      img {
+        opacity: 0.8;
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+    }
+  }
+}

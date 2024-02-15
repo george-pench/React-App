@@ -24,3 +24,13 @@ h2 {
   /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   height: fit-content; /* test for autoprefixer in postcss */
 }
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}

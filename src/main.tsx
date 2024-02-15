@@ -1,10 +1,10 @@
 import "./styles/main.scss";
 // watch: native intellisense and file-peek for aliases from jsconfig.json and with none-js files doesn't work: https://github.com/microsoft/TypeScript/issues/29334
 
-import { Component, ErrorInfo /* , StrictMode */ } from "react";
+import React, { Component, ErrorInfo /* , StrictMode */ } from "react";
 import ReactDOM from "react-dom/client";
 import apiEndpoints from "./api.endpoints";
-import HelloPage from "./components/helloPage";
+import App from "./components/app";
 
 interface Props {}
 interface State {}
@@ -36,13 +36,20 @@ class AppContainer extends Component<Props, State> {
   }
 
   render() {
-    return (
-      // <StrictMode>
-      <HelloPage />
-      // </StrictMode>
-    );
+    return <App />;
   }
 }
 
-ReactDOM.createRoot(document.getElementById("app")!).render(<AppContainer />);
+const rootElement = document.getElementById("app");
+
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+
+  root.render(
+    <React.StrictMode>
+      <AppContainer />
+    </React.StrictMode>,
+  );
+}
+
 // React + TS: https://github.com/typescript-cheatsheets/react#reacttypescript-cheatsheets
