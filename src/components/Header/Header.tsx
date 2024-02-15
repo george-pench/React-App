@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styles from "./Header.m.scss";
 import ROUTES from "../../constants/routePaths";
 
-export default function TheHeader() {
+export default function Header() {
   const getNavLinkClass = ({ isActive }: { isActive: boolean }) => (isActive ? styles.navLinkActive : styles.navLink);
 
   return (

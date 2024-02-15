@@ -3,7 +3,7 @@ import epicGamesLogo from "images/epicGamesLogo.svg";
 import rockstarGamesLogo from "images/rockstarGamesLogo.svg";
 import styles from "./Footer.m.scss";
 
-export default function TheFooter() {
+export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
