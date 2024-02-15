@@ -1,16 +1,16 @@
 // src/components/Layout.tsx
 import { Outlet } from "react-router-dom";
-import TheHeader from "./theHeader";
-import TheFooter from "./theFooter";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 
 export default function Layout() {
   return (
     <div className="layout-container">
-      <TheHeader />
+      <Header />
       <main className="main-content">
         <Outlet /> {}
       </main>
-      <TheFooter />
+      <Footer />
     </div>
   );
 }
