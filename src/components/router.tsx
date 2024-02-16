@@ -4,15 +4,21 @@ import Layout from "./layout";
 import HomePage from "./home";
 import ProductsPage from "./products";
 import AboutPage from "./about";
+import ErrorPage from "./Error/errorPage";
+import SignIn from "./Sign/signIn";
+import SignUp from "./Sign/signUp";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: ROUTES.HOME,
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
       { path: ROUTES.PRODUCTS, element: <ProductsPage /> },
       { path: ROUTES.ABOUT, element: <AboutPage /> },
+      { path: ROUTES.SIGNIN, element: <SignIn /> },
+      { path: ROUTES.SIGNUP, element: <SignUp /> },
     ],
   },
   {

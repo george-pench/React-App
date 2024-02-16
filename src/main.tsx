@@ -5,6 +5,8 @@ import React, { Component, ErrorInfo /* , StrictMode */ } from "react";
 import ReactDOM from "react-dom/client";
 import apiEndpoints from "./api.endpoints";
 import App from "./components/app";
+import ErrorBoundary from "./components/Error/errorBoundary";
+import ErrorPage from "./components/Error/errorPage";
 
 interface Props {}
 interface State {}
@@ -47,7 +49,9 @@ if (rootElement) {
 
   root.render(
     <React.StrictMode>
-      <AppContainer />
+      <ErrorBoundary fallback={<ErrorPage />}>
+        <AppContainer />
+      </ErrorBoundary>
     </React.StrictMode>,
   );
 }
