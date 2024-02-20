@@ -12,9 +12,16 @@ export default function Header() {
         <NavLink to={ROUTES.HOME} className={getNavLinkClass}>
           Home
         </NavLink>
-        <NavLink to={ROUTES.PRODUCTS} className={getNavLinkClass}>
-          Products
-        </NavLink>
+        <div className={styles.dropdown}>
+          <button type="button" className={styles.dropbtn}>
+            Products
+          </button>
+          <div className={styles.dropdownContent}>
+            <NavLink to={`${ROUTES.PRODUCTS}/pc`}>PC</NavLink>
+            <NavLink to={`${ROUTES.PRODUCTS}/playstation`}>Playstation 5</NavLink>
+            <NavLink to={`${ROUTES.PRODUCTS}/xbox`}>XBox One</NavLink>
+          </div>
+        </div>
         <NavLink to={ROUTES.ABOUT} className={getNavLinkClass}>
           About
         </NavLink>
