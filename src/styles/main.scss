@@ -11,7 +11,11 @@ body {
   // prettier-ignore
   font: 14px "OpenSans-Regular", sans-serif;
   min-height: 100vh;
-  background: top / contain url(images/background.svg) no-repeat;
+  background: top / contain url(images/background.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h1 {
@@ -23,4 +27,14 @@ h2 {
   font-size: 2em;
   /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   height: fit-content; /* test for autoprefixer in postcss */
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
 }
