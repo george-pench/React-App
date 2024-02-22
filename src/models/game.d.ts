@@ -4,4 +4,5 @@ export interface Game {
   price: string;
   imageUrl: string;
   rating: number;
+  productType: "PC" | "Playstation" | "Xbox";
 }

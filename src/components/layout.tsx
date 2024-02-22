@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-import GameStoreContainer from "./Search/gameStoreContainer";
+import GameStoreContainer from "./Game/gameStoreContainer";
 
 export default function Layout() {
   return (

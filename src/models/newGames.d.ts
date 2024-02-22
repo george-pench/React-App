@@ -1,5 +1,5 @@
 import { Game } from "./game";
 
-export interface NewGamesComponentProps {
+export interface NewGamesProps {
   recentGames: Game[];
 }
