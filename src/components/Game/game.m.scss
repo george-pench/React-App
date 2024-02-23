@@ -4,6 +4,7 @@
   justify-content: center;
   gap: 2.5rem;
   padding: 7rem;
+  padding-top: 30px;
 }
 
 .gameCard {
@@ -40,6 +41,10 @@
   font-size: 1em;
   padding-right: 8px;
   color: $whiteColor;
+}
+
+.gameRating {
+  color: $gold;
 }
 
 .star {
@@ -100,29 +105,10 @@
   border-radius: 10px;
   font-size: 1em;
   cursor: pointer;
-  outline: none;
-  position: relative;
-  overflow: hidden;
-  transition:
-    background-color 0.3s,
-    transform 0.2s;
-  z-index: 2;
-}
 
-.addToCartButton:hover {
-  background-color: $purpleColor;
-}
-
-.addToCartButton:active {
-  transform: translateY(2px);
-}
-
-.addToCartButton:focus {
-  box-shadow: 0 0 0 3px $purpleColor;
-}
-
-.addToCartButton:focus-within {
-  box-shadow: 0 0 0 3px $purpleColor;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .flipCard:hover .flipCardInner {

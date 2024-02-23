@@ -6,6 +6,7 @@ function GameCard({ game }: GameCardProps): JSX.Element {
   // const { name, price, imageUrl, productType } = game; use this when we want to use productType to filter games by type for next tickets
   const { name, price, imageUrl } = game;
   const defaultImage = logo;
+  const renderRating = () => "★★★★★";
 
   return (
     <div className={styles.flipCard}>
@@ -16,13 +17,7 @@ function GameCard({ game }: GameCardProps): JSX.Element {
             <div className={styles.gameInfo}>
               <h3 className={styles.gameTitle}>{name}</h3>
               <p className={styles.gamePrice}>{price || "29.99$"}</p>
-              <div>
-                <span className={styles.star}>&#9733;</span>
-                <span className={styles.star}>&#9733;</span>
-                <span className={styles.star}>&#9733;</span>
-                <span className={styles.star}>&#9733;</span>
-                <span className={styles.star}>&#9733;</span>
-              </div>
+              <div className={styles.gameRating}>{renderRating()}</div>
             </div>
           </div>
         </div>

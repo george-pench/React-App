@@ -49,14 +49,18 @@ function GameStoreContainer() {
     <div>
       <Search onSearch={handleSearch} isLoading={isLoading} />
       {!isLoading && searchResults.length > 0 && <ResultsDropdown searchResults={searchResults} onResultClick={handleResultClick} />}
-      <div className="categories-header">
-        <h2>Categories</h2>
+      <div className="categories-background">
+        <div className="categories-header">
+          <h2>Categories</h2>
+        </div>
+        <Categories />
       </div>
-      <Categories />
-      <div className="newGames-header">
-        <h2>New Games</h2>
+      <div className="newGames-background">
+        <div className="newGames-header">
+          <h2>New games</h2>
+        </div>
+        <NewGames recentGames={recentClicks} />
       </div>
-      <NewGames recentGames={recentClicks} />
     </div>
   );
 }
