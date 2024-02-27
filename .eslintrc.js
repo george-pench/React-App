@@ -29,8 +29,6 @@ module.exports = {
   },
   plugins: ["json", "prettier", "import", "@typescript-eslint", "unused-imports", "css-modules"],
   rules: {
-    "import/no-named-as-default": "off",
-    "import/no-named-as-default-member": "off",
     "css-modules/no-unused-class": "warn",
     "css-modules/no-undef-class": "error",
     // TS
