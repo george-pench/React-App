@@ -1,6 +1,7 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import ROUTES from "../constants/routePaths";
 import Layout from "./layout";
+import Home from "./pages/Home/Home";
 import ProductsPage from "./products";
 import AboutPage from "./about";
 import ErrorPage from "./Error/errorPage";
@@ -13,15 +14,12 @@ export const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
-      { path: `${ROUTES.PRODUCTS}/:category`, element: <ProductsPage /> },
+      { index: true, element: <Home /> },
+      { path: ROUTES.PRODUCTS_BY_PLATFORM, element: <ProductsPage /> },
       { path: ROUTES.ABOUT, element: <AboutPage /> },
       { path: ROUTES.SIGNIN, element: <SignIn /> },
       { path: ROUTES.SIGNUP, element: <SignUp /> },
     ],
-  },
-  {
-    path: "*",
-    element: <Navigate to={ROUTES.HOME} replace />,
   },
 ]);
 
