@@ -2,74 +2,50 @@
 @import "sanitize.css";
 @import "fontface.css";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --base-margin: 1.6rem;
+  --base-focus: #fff;
+  --ctrl-border-radius: 0px;
+  --base-btn-bg: rgba(90, 43, 125, 0.7);
+  --base-btn-text: #e3e3e3;
+  --icon-size: 20px;
+  --icon-hover-bg: #fff;
+  --popup-bg: black;
+  --menu-hover-bg: rgba(122, 122, 122, 0.7);
+  --ctrl-check-off-bg: #fff;
+  --ctrl-check-on-bg: #0375ff;
+  --ctrl-check-on: #fff;
+  --ctrl-check-size: 18px;
+  --ctrl-switch-padding: 7px 0;
+  --modal-bg: #121212;
 }
 
 body {
-  color: $basicColor;
-  // prettier-ignore
-  font: 14px "OpenSans-Regular", sans-serif;
+  color: $whitTextColor;
+  font:
+    16px "OpenSans-Regular",
+    sans-serif;
   min-height: 100vh;
-  background: top / contain url(images/background.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1 {
-  font-size: 2.2em;
-  text-align: center;
+ol,
+ul {
+  list-style: none;
 }
 
-h2 {
-  font-size: 2em;
-  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
-  height: fit-content; /* test for autoprefixer in postcss */
-}
-
-.layout-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
-}
-
-.categories-header h2,
-.newGames-header h2 {
-  color: $whiteColor;
-  border-bottom: 1px solid $whiteColor;
-}
-
-.categories-header h2 {
-  padding-bottom: 10px;
-  padding-top: 20px;
-}
-
-.newGames-header h2 {
-  padding-left: 50px;
-  padding-top: 10px;
-}
-
-.categories-background {
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-.newGames-background {
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  margin-bottom: 20px;
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
