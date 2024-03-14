@@ -1,0 +1,47 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  background-color: $backgroundColor;
+  height: $headerHeight;
+}
+
+.storeName {
+  padding-left: 15px;
+}
+
+.navbarLinkItems {
+  display: flex;
+}
+
+.linkItem {
+  width: 115px;
+  padding: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+}
+
+.active {
+  border-bottom: 4px solid $mainPinkColor;
+}
+
+.linkItem:hover {
+  background-color: $darkHoverColor;
+}
+
+.linkItem:focus {
+  background-color: $darkHoverColor;
+}
+
+.icon {
+  height: 17px;
+  filter: invert(95%);
+}
+
+.onlyIcon {
+  width: 90px;
+}

@@ -1,21 +1,16 @@
+import classNames from "classnames";
 import { WUPPasswordControl } from "web-ui-pack";
 import BaseControl, { BaseControlProps } from "./baseControl";
-import styles from "./text.m.scss";
+import styles from "./controls.m.scss";
 
-WUPPasswordControl.$use(); // register control in the browser
-// WUPPasswordControl.$defaults.clearButton = true;
+WUPPasswordControl.$use();
 
 interface Props extends BaseControlProps<string, WUPPasswordControl, WUP.Password.Options> {
   isStrict?: boolean;
 }
 
 const strictValidations: Partial<WUP.Password.ValidityMap> = {
-  min: 8,
-  max: 64,
-  minUpper: 1,
-  minLower: 1,
-  minNumber: 1,
-  special: { min: 1, chars: "!@#$%^&-_" },
+  min: 3,
 };
 
 export default class PasswordControl extends BaseControl<WUPPasswordControl, Props> {
@@ -28,6 +23,6 @@ export default class PasswordControl extends BaseControl<WUPPasswordControl, Pro
   }
 
   goRender(props: Record<string, unknown>): React.ReactElement {
-    return <wup-pwd {...props} class={`${styles.ctrl} ${props.className}`.trim()} />;
+    return <wup-pwd {...props} class={classNames(styles.ctrl, this.props.className)} />;
   }
 }

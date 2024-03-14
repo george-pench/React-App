@@ -1,0 +1,161 @@
+$animT: 1s;
+
+.gameCardBox {
+  width: 195px;
+  height: 350px;
+  font-size: 14px;
+  border-radius: 20px;
+  background-color: inherit;
+
+  .gameCardContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform $animT;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+
+    .frontSide,
+    .backSide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .frontSide {
+      background-color: $backgroundColor;
+      box-shadow: 0px 0px 10px 2px $mainPinkColor;
+      border-radius: 20px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .imageContainer {
+        margin-bottom: 35px;
+
+        .platformsContainer {
+          display: flex;
+          position: absolute;
+          background-color: $inheritDarkerBackground;
+          border-top-left-radius: 20px;
+          padding: 3px;
+
+          .platformIcon {
+            width: 20px;
+            height: 20px;
+            padding: 2px;
+            filter: invert(100%);
+          }
+        }
+
+        .gameImage {
+          width: 195px;
+          height: 220px;
+          object-fit: cover;
+          border-top-right-radius: 20px;
+          border-top-left-radius: 20px;
+        }
+      }
+
+      .detailsContainer {
+        width: 100%;
+        padding: 0 10px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+
+        .gameTitle {
+          font-weight: normal;
+          text-align: left;
+        }
+      }
+
+      .starsWrapper {
+        width: 100%;
+        padding: 0 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+        .MuiRating-iconEmpty {
+          color: #fff;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .backSide {
+      background-color: $backgroundColor;
+      box-shadow: 0px 0px 10px 2px $mainPinkColor;
+      border-radius: 20px;
+      transform: rotateY(180deg);
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+
+      .description {
+        text-align: justify;
+        padding: 30px 15px 0 15px;
+      }
+
+      .buttonsContainer {
+        display: flex;
+        gap: 20px;
+
+        .cardButtons {
+          padding: 10px;
+          background-color: $mainPinkColor;
+          font-size: 14px;
+          font-family: OpenSans-Regular, sans-serif;
+          color: $whitTextColor;
+          border: none;
+          border-radius: 5px;
+          margin-bottom: 15px;
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: inset 0 0 0 99999px rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
+}
+
+.gameCardBox:focus {
+  outline: 0;
+}
+
+.gameCardBox:hover,
+.gameCardBox:focus-within {
+  .gameCardContainer {
+    transform: rotateY(180deg);
+    animation: fixFlipClick $animT forwards linear;
+  }
+
+  .frontSide {
+    animation: fixFlipClick2 $animT forwards linear;
+  }
+}
+
+@keyframes fixFlipClick {
+  99% {
+    backface-visibility: hidden;
+  }
+
+  100% {
+    backface-visibility: visible;
+  }
+}
+
+@keyframes fixFlipClick2 {
+  100% {
+    z-index: 4;
+  }
+}
